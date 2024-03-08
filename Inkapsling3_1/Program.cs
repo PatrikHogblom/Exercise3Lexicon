@@ -1,4 +1,5 @@
-﻿namespace Inkapsling3_1
+﻿
+namespace Inkapsling3_1
 {
     internal class Program
     {
@@ -6,8 +7,9 @@
         {
             try
             {
+                //Uppgift 3.1
                 //Person person = new Person();
-                PersonHandler personHandler = new PersonHandler();
+                /*PersonHandler personHandler = new PersonHandler();
 
                 Person person = personHandler.CreatePerson(28, "Patrik", "Högblom", 191, 105);
                 personHandler.PrintPerson(person);
@@ -43,9 +45,27 @@
                 Console.WriteLine("\nDelete person from list method is used");
                 personHandler.DeletePerson(person);
                 //personHandler.StorePersonInList(person);
-                personHandler.PrintPersonList();
+                personHandler.PrintPersonList();*/
 
-                //Console.WriteLine(person.Age + " " + person.FName + " " + person.LName + " " + person.Height + " " + person.Weight);
+                //uppgift 3.2
+                List<UserError> UserErrors = new List<UserError>();
+
+                UserErrors.Add(new NumericInputError());
+                UserErrors.Add(new TextInputError());
+                UserErrors.Add(new DateFormatInputError());
+                UserErrors.Add(new PasswordInputError());
+                UserErrors.Add(new IllegalSymbolTextInputError());
+
+                foreach (UserError error in UserErrors)
+                {
+                    Console.WriteLine(error.UEMessage());
+                }
+
+                //skapa nu 3 klasser med egna definitioner på UEmessage
+
+
+
+                Console.ReadLine();
 
             }
             catch (Exception ex)

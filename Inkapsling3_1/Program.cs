@@ -48,7 +48,7 @@ namespace Inkapsling3_1
                 personHandler.PrintPersonList();*/
 
                 //uppgift 3.2
-                List<UserError> UserErrors = new List<UserError>();
+                /*List<UserError> UserErrors = new List<UserError>();
 
                 UserErrors.Add(new NumericInputError());
                 UserErrors.Add(new TextInputError());
@@ -59,9 +59,11 @@ namespace Inkapsling3_1
                 foreach (UserError error in UserErrors)
                 {
                     Console.WriteLine(error.UEMessage());
-                }
+                }*/
 
-                //skapa nu 3 klasser med egna definitioner på UEmessage
+
+                //uppg3.3
+                //Animal animal = new Animal();
 
 
 

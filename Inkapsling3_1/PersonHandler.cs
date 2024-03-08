@@ -1,7 +1,11 @@
-﻿namespace Inkapsling3_1
+﻿using System;
+
+namespace Inkapsling3_1
 {
     internal class PersonHandler
     {
+
+        private List<Person> personList = new List<Person>();
         
         //uppg 3.1.2
         public void SetAge(Person person, int age) 
@@ -22,6 +26,61 @@
             };
         }
 
+        //uppg 3.1.4
+        //methods to create
 
+        //updateAge,
+        public void UpdateAge(Person person, int newAge)
+        { 
+            person.Age = newAge;
+        }
+        //updateName,
+        public void UpdateFirstName(Person person, string newFirstName) 
+        { 
+            person.FName = newFirstName;
+        }
+        public void UpdateLastName(Person person, string newLastName) 
+        { 
+            person.LName = newLastName;
+        }
+        //updateHeight,
+        public void UpdateHeight (Person person, int newHeight) 
+        { 
+            person.Height = newHeight;
+        }
+        //updateWeight,
+        public void UpdateWeight (Person person, int newWeight) 
+        { 
+            person.Weight = newWeight;
+        }
+
+        //the code that comes below might not be necessary 
+
+        //store the person in a list
+        public void StorePersonInList(Person person) 
+        { 
+            personList.Add(person);
+        }
+
+        //print the current person information
+        public void PrintPerson(Person person)
+        {
+            Console.WriteLine($"Age:{person.Age} \nName: {person.FName} {person.LName} \nHeight: {person.Height} \nWeight: {person.Weight}");
+        }
+
+        //Remove person from list 
+        public void DeletePerson(Person person)
+        {
+            personList.Remove(person);
+        }
+
+        //print the list
+        public void PrintPersonList()
+        {
+            foreach (Person person in personList)
+            { 
+                Console.WriteLine($"Age:{person.Age} Name: {person.FName} {person.LName} Height: {person.Height} Weight: {person.Weight}");
+            }
+        }
     }
 }

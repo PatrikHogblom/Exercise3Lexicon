@@ -6,9 +6,9 @@
         public string Name { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
-        public int Weight { get; set; }
+        public double Weight { get; set; }
         public abstract void DoSound();
-        public Animal(string name, int age, string gender, int weight)
+        public Animal(string name, int age, string gender, double weight)
         {
             Name = name;
             Age = age;
@@ -17,11 +17,12 @@
         }
     }
 
+    //uppg: 3.2.5 -> 3.2.7
     class Horse : Animal
     {
         public string HorseOccupation { get; set; }
 
-        public Horse(string name, int age, string gender, int weight, string horseOccupation) : base(name, age, gender, weight)
+        public Horse(string name, int age, string gender, double weight, string horseOccupation) : base(name, age, gender, weight)
         {
             HorseOccupation = horseOccupation; //wild, breeding, racing, work, farm 
         }
@@ -36,7 +37,7 @@
     {
         public string DogBreed { get; set; }
 
-        public Dog(string name, int age, string gender, int weight, string dogBreed) : base(name, age, gender, weight)
+        public Dog(string name, int age, string gender, double weight, string dogBreed) : base(name, age, gender, weight)
         {
             DogBreed = dogBreed;
         }
@@ -51,7 +52,7 @@
     {
         public int NrOfSpikes { get; set; }
 
-        public Hegdehog(string name, int age, string gender, int weight, int nrOfSpikes) : base(name, age, gender, weight)
+        public Hegdehog(string name, int age, string gender, double weight, int nrOfSpikes) : base(name, age, gender, weight)
         {
             NrOfSpikes = nrOfSpikes;
         }
@@ -66,7 +67,7 @@
     class Worm : Animal
     {
         public bool IsPoisonus { get; set; }
-        public Worm(string name, int age, string gender, int weight, bool isPoisonus) : base(name, age, gender, weight)
+        public Worm(string name, int age, string gender, double weight, bool isPoisonus) : base(name, age, gender, weight)
         {
             IsPoisonus = isPoisonus;
         }
@@ -81,7 +82,7 @@
     {
         public double WingSpan { get; set; }
 
-        public Bird(string name, int age, string gender, int weight, double wingSpan) : base(name, age, gender, weight)
+        public Bird(string name, int age, string gender, double weight, double wingSpan) : base(name, age, gender, weight)
         {
             WingSpan = wingSpan;
         }
@@ -96,7 +97,7 @@
     {
         public bool PackLeader { get; set; }
 
-        public Wolf(string name, int age, string gender, int weight, bool packLeader) : base(name, age, gender, weight)
+        public Wolf(string name, int age, string gender, double weight, bool packLeader) : base(name, age, gender, weight)
         {
             PackLeader = packLeader;
         }
@@ -107,24 +108,50 @@
         }
     }
 
+    //uppg 3.2.8, 3.2.9
     class Pelican : Bird
     {
-        public Pelican(string name, int age, string gender, int weight, double wingSpan) : base(name, age, gender, weight, wingSpan)
+        public double MouthLength { get; set; }
+        public Pelican(string name, int age, string gender, double weight, double wingSpan, double mounthLength) : base(name, age, gender, weight, wingSpan)
         {
+            MouthLength = mounthLength;
         }
     }
 
     class Flamingo : Bird
     {
-        public Flamingo(string name, int age, string gender, int weight, double wingSpan) : base(name, age, gender, weight, wingSpan)
+        public double LegLength { get; set; }
+        public Flamingo(string name, int age, string gender, double weight, double wingSpan, double legLength) : base(name, age, gender, weight, wingSpan)
         {
+            LegLength = legLength;
         }
     }
 
     class Swan : Bird
     {
-        public Swan(string name, int age, string gender, int weight, double wingSpan) : base(name, age, gender, weight, wingSpan)
+        public double NeckLength { get; set; }
+        public Swan(string name, int age, string gender, double weight, double wingSpan, double neckLength) : base(name, age, gender, weight, wingSpan)
         {
+            NeckLength = neckLength;
+        }
+    }
+
+    //uppg 3.2.10
+    interface IPerson
+    {
+        public void Talk();
+    }
+
+    //uppgift 3.2.11 och 3.2.12
+    class WolfMan : Wolf,IPerson
+    {
+        public WolfMan(string name, int age, string gender, double weight, bool packLeader) : base(name, age, gender, weight, packLeader)
+        {
+        }
+
+        public void Talk()
+        {
+            Console.WriteLine("I'm only a werewolf under full moon, rest assured because i will turn to human again!");
         }
     }
 

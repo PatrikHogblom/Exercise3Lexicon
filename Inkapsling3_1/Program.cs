@@ -1,5 +1,4 @@
-﻿
-namespace Inkapsling3_1
+﻿namespace Inkapsling3_1
 {
     internal class Program
     {
@@ -63,9 +62,41 @@ namespace Inkapsling3_1
 
 
                 //uppg3.3
-                //Animal animal = new Animal();
+                Animal horse = new Horse(name: "Diamanten", age: 9, gender: "male", weight: 200.8, horseOccupation: "Racing Horse");
+                Animal dog = new Dog(name: "Dexter", age: 4, gender: "male", weight: 10.5, dogBreed: "Shcäfer");
+                Animal hegdehog = new Hegdehog(name: "Needle", age: 0, gender: "female", weight: 0.5, nrOfSpikes: 200);
+                Animal worm = new Worm(name: "Digger", age: 1, gender: "unkown", weight: 0.05, isPoisonus: false);
+                Animal bird = new Bird(name: "Chirper", age: 5, gender: "female", weight: 0.2, wingSpan: 20);
+                Animal wolf = new Wolf(name: "Growler", age: 12, gender: "male", weight: 20.9, packLeader: true);
+                Animal pelican = new Pelican(name: "Fisher", age: 8, gender: "male", weight: 7.0, wingSpan: 60, mounthLength: 30);
+                Animal flamingo = new Flamingo(name: "Doflamingo", age: 15, gender: "male", weight: 4.6, wingSpan: 80, legLength: 40);
+                Animal swan = new Swan(name: "Bella", age: 10, gender: "female", weight: 3.5, wingSpan: 40, neckLength: 30);
+                Animal wolfman = new WolfMan(name: "Daemon", age: 32, gender: "male", weight: 106.5, packLeader: false);
+                
+                //Add each animal to a list
+                List<Animal> animals = new List<Animal>();
+                animals.Add(horse);
+                animals.Add(dog);
+                animals.Add(hegdehog);
+                animals.Add(worm);
+                animals.Add(bird);
+                animals.Add(wolf);
+                animals.Add(pelican);
+                animals.Add(flamingo);
+                animals.Add(swan);
+                animals.Add(wolfman);
 
+                //try to see if DoSound() works
+                foreach (Animal animal in animals)
+                {
+                    Console.WriteLine(animal.Name);
+                    animal.DoSound();
+                }
 
+                //test to se if wolfman can talk
+                WolfMan wolfman2 = new WolfMan(name: "Jason", age: 32, gender: "male", weight: 106.5, packLeader: false);  
+                Console.WriteLine(wolfman2.Name);
+                wolfman2.Talk();
 
                 Console.ReadLine();
 

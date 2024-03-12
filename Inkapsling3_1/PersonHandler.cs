@@ -1,15 +1,13 @@
-﻿using System;
-
-namespace Inkapsling3_1
+﻿namespace Inkapsling3_1
 {
+    //uppg: 3.1.2
     internal class PersonHandler
     {
 
         private List<Person> personList = new List<Person>();
-        
-        //uppg 3.1.2
-        public void SetAge(Person person, int age) 
-        { 
+
+        public void SetAge(Person person, int age)
+        {
             person.Age = age;
         }
 
@@ -31,34 +29,34 @@ namespace Inkapsling3_1
 
         //updateAge,
         public void UpdateAge(Person person, int newAge)
-        { 
+        {
             person.Age = newAge;
         }
         //updateName,
-        public void UpdateFirstName(Person person, string newFirstName) 
-        { 
+        public void UpdateFirstName(Person person, string newFirstName)
+        {
             person.FName = newFirstName;
         }
-        public void UpdateLastName(Person person, string newLastName) 
-        { 
+        public void UpdateLastName(Person person, string newLastName)
+        {
             person.LName = newLastName;
         }
         //updateHeight,
-        public void UpdateHeight (Person person, int newHeight) 
-        { 
+        public void UpdateHeight(Person person, int newHeight)
+        {
             person.Height = newHeight;
         }
         //updateWeight,
-        public void UpdateWeight (Person person, int newWeight) 
-        { 
+        public void UpdateWeight(Person person, int newWeight)
+        {
             person.Weight = newWeight;
         }
 
         //the code that comes below might not be necessary 
 
         //store the person in a list
-        public void StorePersonInList(Person person) 
-        { 
+        public void StorePersonInList(Person person)
+        {
             personList.Add(person);
         }
 
@@ -78,7 +76,7 @@ namespace Inkapsling3_1
         public void PrintPersonList()
         {
             foreach (Person person in personList)
-            { 
+            {
                 Console.WriteLine($"Age:{person.Age} Name: {person.FName} {person.LName} Height: {person.Height} Weight: {person.Weight}");
             }
         }

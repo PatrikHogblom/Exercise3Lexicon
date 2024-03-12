@@ -1,5 +1,6 @@
 ﻿namespace Inkapsling3_1
 {
+    //uppg 3.1.1
     internal class Person
     {
         private int age;
@@ -7,13 +8,13 @@
         private string lName;
         private double height;
         private double weight;
-      
+
         //properties
-        public int Age 
+        public int Age
         {
             get { return age; }
-            set 
-            { 
+            set
+            {
                 if (value < 0)
                 {
                     throw new ArgumentException("Age must be bigger than 0");
@@ -24,10 +25,10 @@
                 }
             }
         }
-        public string FName 
+        public string FName
         {
             get { return fName; }
-            set 
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -35,24 +36,24 @@
                 }
                 else
                 {
-                    if(value.Length >= 2 && value.Length <= 10)
+                    if (value.Length >= 2 && value.Length <= 10)
                     {
                         fName = value;
                     }
                     else
                     {
                         throw new ArgumentException("Firstname cannot be smaller than 2 letters or bigger than 10 letters");
-                    }      
+                    }
                 }
-            } 
-        }
-        public string LName 
-        {
-            get 
-            { 
-              return lName;
             }
-            set 
+        }
+        public string LName
+        {
+            get
+            {
+                return lName;
+            }
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -71,16 +72,16 @@
                 }
             }
         }
-        public double Height 
+        public double Height
         {
-            get 
-            { 
+            get
+            {
                 return height;
             }
-            set 
-            { 
+            set
+            {
                 height = value;
-            } 
+            }
         }
         public double Weight
         {

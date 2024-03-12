@@ -1,45 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Inkapsling3_1
+﻿namespace Inkapsling3_1
 {
+    //uppg 3.2.1: Skapa den abstrakta klassen UserError
     abstract class UserError
     {
+        //uppg 3.2.2:  Skapa den abstrakta metodenUEMessage() som har returtypenstring.
         public abstract string UEMessage();
     }
 
+    //uppg 3.2.3: Skapa en vanlig klass NumericInputError som ärverfrånUserError
     class NumericInputError : UserError
     {
+        //uppg 3.2.4:  Skriv enoverride för UEMessage()så att den returerar “You tried to use numeric input in a text only field.This fired an error!”
         public override string UEMessage()
         {
             return "You tried to use a numeric input in a text only field. This fired an error!";
         }
     }
 
+    //uppg 3.2.5: Skapa en vanlig klass TextInputError som ärver frånUserError
     class TextInputError : UserError
     {
+        //uppg: 3.2.6:  Skriv enoverride förUEMessage()så att den returerar “You tried to use a text input in a numeric only field.This fired an error!”
         public override string UEMessage()
         {
             return "You tried to use a text input in a numeric only field. This fired an error!";
         }
     }
 
-    //vilka andra definitioner kan jag ha?
-    class DateFormatInputError : UserError 
-    { 
-        public override string UEMessage() 
+    // uppg 3.2.9: Skapa nu tre egna klasser med tre egna definitioner på UEMessage()
+    class DateFormatInputError : UserError
+    {
+        public override string UEMessage()
         {
             return "You input incorrect date format in the textfield, use YY-MM-DD";
-        } 
+        }
     }
 
-    class PasswordInputError: UserError
+    class PasswordInputError : UserError
     {
         public override string UEMessage()
         {

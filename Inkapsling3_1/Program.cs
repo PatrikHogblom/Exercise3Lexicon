@@ -1,4 +1,6 @@
-﻿namespace Inkapsling3_1
+﻿using System;
+
+namespace Inkapsling3_1
 {
     internal class Program
     {
@@ -148,6 +150,21 @@
                     if(animal.GetType().Name == "Dog") 
                     {
                         Console.WriteLine(animal.Stats());
+                    }
+                }
+
+                //3.4.16.Kommer du åt den metoden från Animals listan? -> Nej
+                //3.4.17.F: Varför inte?
+                //svar: Kommer inte åt metoden Playfulness i klassen Dog via listan Animals eftersom denna metod
+                //är enbart tillänglig för klassen/objekt av typen Dog och kan inte anropas via objektet Animals
+
+                //3.4.18. Hitta ett sätt att skriva ut din nya metod för dog genom en foreach på Animals.
+                foreach (var animal in animals)
+                {
+                    if (animal is Dog)
+                    {
+                        Dog dog = (Dog)animal;
+                        Console.WriteLine(dog.Playfulness());
                     }
                 }
 

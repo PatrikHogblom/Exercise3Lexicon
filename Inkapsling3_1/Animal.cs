@@ -71,6 +71,21 @@
             textValue += $"\nDog breed: {DogBreed}";
             return textValue;
         }
+
+        // 3.4.15. Skapa en ny metod med valfritt namn  i klassen Dog som endast returnerar en valfri
+        //sträng.
+        public string Playfulness() 
+        {
+            if(Age < 6) 
+            {
+                return $"\nThe dog {Name} at age {Age} is very playful, it needs a big space to be active/play";
+            }
+            else
+            {
+
+                return $"\nThe dog {Name} at age {Age}, the playfulness is decreasing and thus the dog no longer need a big space to play";
+            }
+        }
     }
 
     class Hegdehog : Animal

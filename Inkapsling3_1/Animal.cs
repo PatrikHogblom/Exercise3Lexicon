@@ -15,6 +15,17 @@
             Gender = gender;
             Weight = weight;
         }
+
+        public virtual string Stats()
+        {
+            string textValue = string.Empty;
+            textValue += $"\nName: {Name}";
+            textValue += $"\nAge: {Age} years";
+            textValue += $"\nGender: {Gender}";
+            textValue += $"\nWeight: {Weight} kg";
+
+            return textValue;
+        }
     }
 
     //uppg: 3.2.5 -> 3.2.7
@@ -31,6 +42,13 @@
         {
             Console.WriteLine("Horse sounds: Neigh! Neigh!");
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nHorse occupation: {HorseOccupation}";
+            return textValue;
+        }
     }
 
     class Dog : Animal
@@ -45,6 +63,13 @@
         public override void DoSound()
         {
             Console.WriteLine("Dog sounds: woof! woof!");
+        }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nDog breed: {DogBreed}";
+            return textValue;
         }
     }
 
@@ -62,6 +87,13 @@
         {
             Console.WriteLine("Hegdedog sounds: gruff! gruff!");
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nNumber of spikes: {NrOfSpikes}";
+            return textValue;
+        }
     }
 
     class Worm : Animal
@@ -75,6 +107,13 @@
         public override void DoSound()
         {
             Console.WriteLine("Worm sounds: rattle! rattle!");
+        }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nIs Poisonus: {(IsPoisonus == true ? "Yes" : "No")}";
+            return textValue;
         }
     }
 
@@ -91,6 +130,13 @@
         {
             Console.WriteLine("Bird sounds: chirp! chirp!");
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nWingspan: {WingSpan} cm";
+            return textValue;
+        }
     }
 
     class Wolf : Animal
@@ -106,6 +152,13 @@
         {
             Console.WriteLine("Wolf sounds: growl! growl!");
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nPackleader: {(PackLeader == true ? "Yes" : "No")}";
+            return textValue;
+        }
     }
 
     //uppg 3.2.8, 3.2.9
@@ -116,6 +169,13 @@
         {
             MouthLength = mounthLength;
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nMouth length: {MouthLength} cm";
+            return textValue;
+        }
     }
 
     class Flamingo : Bird
@@ -124,6 +184,12 @@
         public Flamingo(string name, int age, string gender, double weight, double wingSpan, double legLength) : base(name, age, gender, weight, wingSpan)
         {
             LegLength = legLength;
+        }
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nLeg length: {LegLength} cm";
+            return textValue;
         }
     }
 
@@ -134,6 +200,13 @@
         {
             NeckLength = neckLength;
         }
+
+        public override string Stats()
+        {
+            string textValue = base.Stats();
+            textValue += $"\nNeck length: {NeckLength} cm";
+            return textValue;
+        }
     }
 
     //uppg 3.2.10
@@ -143,7 +216,7 @@
     }
 
     //uppgift 3.2.11 och 3.2.12
-    class WolfMan : Wolf,IPerson
+    class WolfMan : Wolf, IPerson
     {
         public WolfMan(string name, int age, string gender, double weight, bool packLeader) : base(name, age, gender, weight, packLeader)
         {

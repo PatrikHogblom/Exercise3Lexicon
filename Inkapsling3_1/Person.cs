@@ -1,4 +1,4 @@
-﻿namespace Inkapsling3_1
+﻿namespace Exercise3
 {
     //uppg 3.1.1
     internal class Person

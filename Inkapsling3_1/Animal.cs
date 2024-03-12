@@ -1,4 +1,4 @@
-﻿namespace Inkapsling3_1
+﻿namespace Exercise3
 {
     //uppg 3.3.1:  Skapa  abstrakta klassen Animal
     abstract class Animal

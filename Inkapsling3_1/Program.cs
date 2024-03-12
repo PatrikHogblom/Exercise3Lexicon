@@ -1,4 +1,4 @@
-﻿namespace Inkapsling3_1
+﻿namespace Exercise3
 {
     internal class Program
     {

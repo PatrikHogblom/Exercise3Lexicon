@@ -1,4 +1,4 @@
-﻿namespace Inkapsling3_1
+﻿namespace Exercise3
 {
     //uppg 3.2.1: Skapa den abstrakta klassen UserError
     abstract class UserError
